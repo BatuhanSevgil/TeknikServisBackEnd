@@ -9,67 +9,40 @@ using Entity.Concrete;
 
 namespace Business.Concrete
 {
-  public  class CustomerManager:ICustomerService
+    public class CustomerManager : ICustomerService
     {
         private ICustomerDal _CustomerDal;
 
         public CustomerManager(ICustomerDal customerDal)
         {
             _CustomerDal = customerDal;
-            
+
         }
 
         public IResult Add(Customer customer)
         {
-            var isSuccess = BusinessRules.Run();
 
-            if (isSuccess.Success)
-            {
-                _CustomerDal.Add(customer);
+            _CustomerDal.Add(customer);
+            return new SuccessResult();
 
-            }
-
-            return isSuccess;
         }
 
         public IResult Update(Customer customer)
         {
-            var isSuccess= BusinessRules.Run();
-
-            if (isSuccess.Success)
-            {
-                _CustomerDal.Update(customer);
-                
-            }
-
-            return isSuccess;
-
+            _CustomerDal.Update(customer);
+            return new SuccessResult();
         }
 
         public IResult Delete(Customer customer)
         {
-            var isSuccess = BusinessRules.Run();
-
-            if (isSuccess.Success)
-            {
-                _CustomerDal.Delete(customer);
-
-            }
-
-            return isSuccess;
+            _CustomerDal.Delete(customer);
+            return new SuccessResult();
 
         }
 
         public IDataResult<Customer> GetByCustomerId(int customerId)
         {
-            var isSuccess = BusinessRules.Run();
-
-            if (isSuccess.Success)
-            {
-                return new SuccessDataResult<Customer>(_CustomerDal.Get(customer => customer.Id == customerId));
-            }
-
-            return new ErrorDataResult<Customer>();
+            return new SuccessDataResult<Customer>(_CustomerDal.Get(customer => customer.Id == customerId));
         }
     }
 }

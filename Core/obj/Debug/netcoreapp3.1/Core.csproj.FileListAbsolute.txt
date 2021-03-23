@@ -6,3 +6,4 @@ C:\Users\B\source\repos\TeknikServisBackEnd\Core\obj\Debug\netcoreapp3.1\Core.As
 C:\Users\B\source\repos\TeknikServisBackEnd\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
 C:\Users\B\source\repos\TeknikServisBackEnd\Core\obj\Debug\netcoreapp3.1\Core.dll
 C:\Users\B\source\repos\TeknikServisBackEnd\Core\obj\Debug\netcoreapp3.1\Core.pdb
+C:\Users\B\source\repos\TeknikServisBackEnd\Core\obj\Debug\netcoreapp3.1\Core.csprojAssemblyReference.cache
