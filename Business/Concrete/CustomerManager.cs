@@ -18,7 +18,7 @@ namespace Business.Concrete
             _CustomerDal = customerDal;
 
         }
-
+        //[Aspect]]
         public IResult Add(Customer customer)
         {
 

@@ -16,9 +16,9 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Customer> Customers { get; set; }
         public DbSet<CustomerGroup> CustomerGroups { get; set; }
         public DbSet<Address> Addresses { get; set; }
-
         public DbSet<Brand> Brands { get; set; }
         public DbSet<ServiceType> ServiceTypes { get; set; }
-        public DbSet<ServiceProduct> ServiceProducts { get; set; } 
+        public DbSet<ServiceProduct> ServiceProducts { get; set; }
+
     }
 }
