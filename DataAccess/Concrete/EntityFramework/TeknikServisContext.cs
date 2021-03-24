@@ -19,6 +19,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Brand> Brands { get; set; }
         public DbSet<ServiceType> ServiceTypes { get; set; }
         public DbSet<ServiceProduct> ServiceProducts { get; set; }
-
+        public DbSet<District> Districts { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }

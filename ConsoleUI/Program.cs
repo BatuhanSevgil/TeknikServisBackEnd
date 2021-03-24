@@ -13,21 +13,42 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
 
-            //ICustomerService customerService = new CustomerManager(new EfCustomerDal());
-
-            ////customerService.Add(new Customer()
-            ////{
-            ////    CommericalTitle = "Batuhan",
-            ////    Contact = "Batuhan Sevgil",
-            ////    CustomerAddress = new CustomerAddress() { AddressDetails = "Blabla", CityId = 34, DistrictId = 2 },
-            ////    Phone = "5551253",
-            ////    CustomerGroupId = 4
-            ////});
-
-            //Console.WriteLine(customerService.GetByCustomerId(4).Data.Contact);
 
 
+            ICustomerService _customerDal = new CustomerManager(new EfCustomerDal(),new AddressManager(new EfAddressDal()));
+            ICityService _cityService = new CityManager(new EfCityDal());
 
+            //Address address = new Address() {CityId = 34, DistrictId = 406, Detail = "Valla bilmiyorum yerini"};
+
+            //Customer customer = new Customer()
+            //{
+            //    Contact = "Taş taşğulları",
+            //    CommericalTitle = "Yemek Bekliyor evladı",
+            //    CustomerGroupId = 1,
+            //    Phone = "4444444",
+            //    TaxNumber = "fjjjfjfj"
+            //};
+
+            //      var success=_customerDal.AddWithAddress(customer,address);
+
+            // GetCustomerDetail(_customerDal);
+            //    ProductServiceTest();
+        }
+
+        private static void GetCustomerDetail(ICustomerService _customerDal)
+        {
+            var customer = _customerDal.GeyByCustomerDetailWithId(6).Data;
+            {
+                Console.WriteLine(customer.CommercialTitle);
+                Console.WriteLine(customer.District);
+                Console.WriteLine(customer.CustomerGroup);
+                Console.WriteLine(customer.City);
+                Console.WriteLine(customer.Phone);
+            }
+        }
+
+        private static void ProductServiceTest()
+        {
             IServiceProductDal _product = new EfSerivceProductDal();
 
             _product.Add(new ServiceProduct()
@@ -43,7 +64,6 @@ namespace ConsoleUI
                 SerialNo = "jfjfjfjfjf",
                 TroubleDescription = "Müşteri beyanı",
             });
-
         }
     }
 }

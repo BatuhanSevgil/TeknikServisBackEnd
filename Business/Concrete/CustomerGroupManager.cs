@@ -10,15 +10,13 @@ namespace Business.Concrete
     {
         private ICustomerGroupDal _groupDal;
 
+
         public CustomerGroupManager(ICustomerGroupDal groupDal)
         {
-            _groupDal = groupDal;
-
+            _groupDal = groupDal;   
         }
-
         public IResult Add(CustomerGroup customerGroup)
         {
-            _groupDal.Add(customerGroup);
             return new SuccessResult();
         }
 
