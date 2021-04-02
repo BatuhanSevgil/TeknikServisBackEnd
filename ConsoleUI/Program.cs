@@ -17,6 +17,7 @@ namespace ConsoleUI
 
             ICustomerService _customerDal = new CustomerManager(new EfCustomerDal(),new AddressManager(new EfAddressDal()));
             ICityService _cityService = new CityManager(new EfCityDal());
+      
 
             //Address address = new Address() {CityId = 34, DistrictId = 406, Detail = "Valla bilmiyorum yerini"};
 
