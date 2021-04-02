@@ -2174,6 +2174,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Castle.Core": "4.4.0",
+          "FluentValidation": "9.5.3",
           "Microsoft.EntityFrameworkCore": "5.0.4"
         },
         "compile": {

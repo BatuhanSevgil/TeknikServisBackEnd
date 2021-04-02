@@ -28,17 +28,19 @@ namespace Business.Concrete
 
         public IResult Update(Address address)
         {
-            throw new NotImplementedException();
+            _addressDal.Update(address);
+            return new SuccessResult();
         }
 
         public IResult Delete(Address address)
         {
-            throw new NotImplementedException();
+            _addressDal.Delete(address);
+            return new SuccessResult();
         }
 
         public IDataResult<Address> GetByCustomerId(int customerId)
         {
-            throw new NotImplementedException();
+         return new SuccessDataResult<Address>(_addressDal.Get(address => address.CustomerId == customerId));
         }
     }
 }

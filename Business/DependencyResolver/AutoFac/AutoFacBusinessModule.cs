@@ -7,6 +7,8 @@ using Business.Concrete;
 using Castle.DynamicProxy;
 using Entity.Concrete;
 using static Core.Utilities.Interceptors.MethodInterception;
+using DataAccess.Concrete.EntityFramework;
+using DataAccess.Abstract;
 
 namespace Business.DependencyResolver.AutoFac
 {
@@ -14,6 +16,8 @@ namespace Business.DependencyResolver.AutoFac
     {
         protected override void Load(ContainerBuilder builder)
         {
+
+            // manager to service
             builder.RegisterType<AddressManager>().As<IAddressService>().SingleInstance();
             builder.RegisterType<BrandManager>().As<IBrandService>().SingleInstance();
             builder.RegisterType<CityManager>().As<ICityService>().SingleInstance();
@@ -24,6 +28,11 @@ namespace Business.DependencyResolver.AutoFac
             builder.RegisterType<ProductStatusManager>().As<IProductStatusService>().SingleInstance();
             builder.RegisterType<ServiceProductManager>().As<IServiceProductService>().SingleInstance();
             builder.RegisterType<ServiceTypeManager>().As<IServiceTypeService>().SingleInstance();
+
+            //DAL to Manager
+
+            builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
 

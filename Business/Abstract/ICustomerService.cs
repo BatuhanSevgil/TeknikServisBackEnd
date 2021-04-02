@@ -16,5 +16,6 @@ namespace Business.Abstract
         public IResult AddWithAddress(Customer customer, Address? address);
         public IDataResult<CustomerDetailDto> GeyByCustomerDetailWithId(int customerId);
 
+        public IDataResult<List<Customer>> GetAll();
     }
 }

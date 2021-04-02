@@ -12,6 +12,7 @@ namespace Entity.Concrete
         public string CommericalTitle { get; set; } // Cari Ünvanı
         public string Contact { get; set; } // Yetkili kişi
         public string Phone { get; set; }
+        public string Address { get;set;}
         public string TaxOffice { get; set; }
         public string TaxNumber { get; set; }
         public string TraderNumber { get; set; }

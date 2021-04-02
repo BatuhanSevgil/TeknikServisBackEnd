@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "605CZk0qQ5MIMzObzxPw19Nm7iWr7WpeHvwjwSM2tVyhQCz6ah7IFxflBhoR/3yVJI/DCkpNoZlrE6V697Hxgw==",
+  "dgSpecHash": "eDJN/c0YAn6O0JUCjlhZn7GwtqVjU+vZkGKdtvXT2LrD1vTGhBT9BuUg/lGcLrc6hX8+7mUuUGzFGTjj6XiBVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\B\\source\\repos\\TeknikServisBackEnd\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\B\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\B\\.nuget\\packages\\fluentvalidation\\9.5.3\\fluentvalidation.9.5.3.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.4\\microsoft.entityframeworkcore.5.0.4.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.4\\microsoft.entityframeworkcore.abstractions.5.0.4.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.4\\microsoft.entityframeworkcore.analyzers.5.0.4.nupkg.sha512",

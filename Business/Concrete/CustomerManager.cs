@@ -14,12 +14,10 @@ namespace Business.Concrete
     public class CustomerManager : ICustomerService
     {
         private ICustomerDal _CustomerDal;
-        private IAddressService _addressService;
 
-        public CustomerManager(ICustomerDal customerDal, IAddressService addressService)
+        public CustomerManager(ICustomerDal customerDal)
         {
             _CustomerDal = customerDal; 
-            _addressService = addressService;   
         }
 
         public IDataResult<CustomerDetailDto> GeyByCustomerDetailWithId(int customerId)
@@ -27,6 +25,12 @@ namespace Business.Concrete
             return new SuccessDataResult<CustomerDetailDto>(_CustomerDal.GeyByCustomerDetailWithId(customerId));
 
         }
+
+        public IDataResult<List<Customer>> GetAll()
+        {
+            return new SuccessDataResult<List<Customer>>(_CustomerDal.GetAll());
+        }
+
         //[Aspect]]
         public IResult Add(Customer customer)
         {
@@ -62,7 +66,7 @@ namespace Business.Concrete
                 {
                     var entity = _CustomerDal.AddOutEntity(customer);
                     address.CustomerId = entity.Id;
-                    _addressService.Add(address);
+                  //  _addressService.Add(address);
                     scope.Complete();
                     return new SuccessResult();
 

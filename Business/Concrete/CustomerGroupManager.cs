@@ -34,7 +34,7 @@ namespace Business.Concrete
 
         public IDataResult<CustomerGroup> GetByCustomerId(int groupId)
         {
-            return new SuccessDataResult<CustomerGroup>(_groupDal.Get(group => group.Id == groupId));
+            throw new NotImplementedException();
         }
     }
 }

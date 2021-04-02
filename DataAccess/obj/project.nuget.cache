@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3AT1hoZ2rMOOChW9Gq40TATIqY6XzrW1ZPgXOD7pBEnZjEevxsF2pL+mcRSjd/WXkCMao8x4kCPwdiFByrffLw==",
+  "dgSpecHash": "MxH+RTdHQcIzrT/56GEv2jH+ocA8EjbsDcQmC0WSr7PobXQojhjHQjYMm3M915jKxJNeQpADlGDHKM8YL8J4Ag==",
   "success": true,
   "projectFilePath": "C:\\Users\\B\\source\\repos\\TeknikServisBackEnd\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\B\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
+    "C:\\Users\\B\\.nuget\\packages\\fluentvalidation\\9.5.3\\fluentvalidation.9.5.3.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\B\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

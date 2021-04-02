@@ -26,5 +26,6 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<City>(_cityDal.Get(city => city.CityId == cityCode));
         }
+
     }
 }
