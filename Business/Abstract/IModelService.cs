@@ -13,3 +13,5 @@ namespace Business.Abstract
         IDataResult<List<Model>> GetByBrandId(int brandId);
 
     }
+
+}
