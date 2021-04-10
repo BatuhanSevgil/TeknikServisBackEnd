@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Entity.Concrete;
 
 namespace WebAPI.Controllers
 {
@@ -23,8 +24,25 @@ namespace WebAPI.Controllers
 
 
 
-        [HttpGet]
-      public  IActionResult getall()
+        [HttpPost("add")]
+        public IActionResult add([FromBody] Customer  customer)
+        {
+            var result = _customerService.Add(customer);
+
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+
+
+        }
+
+
+
+        [HttpGet("getall")]
+        public IActionResult getall()
         {
 
             var result = _customerService.GetAll();

@@ -9,7 +9,7 @@ using Entity.Concrete;
 
 namespace Business.Concrete
 {
-    public class AddressManager:IAddressService
+ public class AddressManager:IAddressService
     {
         private IAddressDal _addressDal;
 

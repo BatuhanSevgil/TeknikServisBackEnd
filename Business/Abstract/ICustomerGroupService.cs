@@ -12,6 +12,6 @@ namespace Business.Abstract
         public IResult Add(CustomerGroup customerGroup);
         public IResult Update(CustomerGroup customerGroup);
         public IResult Delete(CustomerGroup customerGroup);
-        public IDataResult<CustomerGroup> GetByCustomerId(int groupId);
+        public IDataResult<List<CustomerGroup>> GetAll();
     }
 }

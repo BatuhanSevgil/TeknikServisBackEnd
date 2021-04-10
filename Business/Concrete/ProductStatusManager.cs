@@ -1,30 +1,42 @@
 ﻿using System.Collections.Generic;
 using Business.Abstract;
 using Core.Utilities.Results;
+using DataAccess.Abstract;
 using Entity.Concrete;
 
 namespace Business.Concrete
 {
     public class ProductStatusManager:IProductStatusService
     {
+        private IProductStatusDal _productStatusDal;
+
+        public ProductStatusManager(IProductStatusDal productStatusDal)
+        {
+            _productStatusDal = productStatusDal;
+        }
         public IResult Add(ProductStatus productStatus)
         {
-            throw new System.NotImplementedException();
+            _productStatusDal.Add(productStatus);
+            return new SuccessResult();
+
         }
 
         public IResult Delete(ProductStatus productStatus)
         {
-            throw new System.NotImplementedException();
+            _productStatusDal.Delete(productStatus);
+            return new SuccessResult();
+
         }
 
         public IDataResult<List<ProductStatus>> GetAllProductStatus()
         {
-            throw new System.NotImplementedException();
+            return new SuccessDataResult<List<ProductStatus>>(_productStatusDal.GetAll());
         }
 
         public IDataResult<ProductStatus> GetById(int productStatusId)
         {
-            throw new System.NotImplementedException();
+            return new SuccessDataResult<ProductStatus>(_productStatusDal.Get(productstatus =>
+                productstatus.Id == productStatusId));
         }
     }
 }

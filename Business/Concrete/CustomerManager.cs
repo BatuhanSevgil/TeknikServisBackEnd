@@ -17,14 +17,16 @@ namespace Business.Concrete
 
         public CustomerManager(ICustomerDal customerDal)
         {
-            _CustomerDal = customerDal; 
+            _CustomerDal = customerDal;
         }
 
-        public IDataResult<CustomerDetailDto> GeyByCustomerDetailWithId(int customerId)
+        public IDataResult<CustomerDetailDto> GetByCustomerDetailWithId(int customerId)
         {
             return new SuccessDataResult<CustomerDetailDto>(_CustomerDal.GeyByCustomerDetailWithId(customerId));
 
         }
+
+
 
         public IDataResult<List<Customer>> GetAll()
         {
@@ -57,26 +59,12 @@ namespace Business.Concrete
         {
             return new SuccessDataResult<Customer>(_CustomerDal.Get(customer => customer.Id == customerId));
         }
-        //[TransactionAspect] Gelince içeride ki cod refactor edilecek.
-        public IResult AddWithAddress(Customer customer, Address address)
-        {
-            using (TransactionScope scope=new TransactionScope())
-            {
-                try
-                {
-                    var entity = _CustomerDal.AddOutEntity(customer);
-                    address.CustomerId = entity.Id;
-                  //  _addressService.Add(address);
-                    scope.Complete();
-                    return new SuccessResult();
 
-                }
-                catch (Exception e)
-                {
-                    scope.Dispose();
-                    return new ErrorResult(e.Message);
-                }
-            }
+        public IDataResult<Customer> AddOutId(Customer customer)
+        {
+            var result = _CustomerDal.AddOutEntity(customer);
+            return new SuccessDataResult<Customer>(result);
         }
+
     }
 }

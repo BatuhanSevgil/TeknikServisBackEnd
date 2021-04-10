@@ -9,6 +9,7 @@ using Entity.Concrete;
 using static Core.Utilities.Interceptors.MethodInterception;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Abstract;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions.Infrastructure;
 
 namespace Business.DependencyResolver.AutoFac
 {
@@ -29,9 +30,17 @@ namespace Business.DependencyResolver.AutoFac
             builder.RegisterType<ServiceProductManager>().As<IServiceProductService>().SingleInstance();
             builder.RegisterType<ServiceTypeManager>().As<IServiceTypeService>().SingleInstance();
 
-            //DAL to Manager
+            //DALclass to DALInterface
 
             builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+            builder.RegisterType<EfBrandDal>().As<IBrandDal>().SingleInstance();
+            builder.RegisterType<EfCityDal>().As<ICityDal>().SingleInstance();
+            builder.RegisterType<EfCustomerGroupDal>().As<ICustomerGroupDal>().SingleInstance();
+            builder.RegisterType<EfCustomerDal>().As<ICustomerDal>().SingleInstance();
+            builder.RegisterType<EfModelDal>().As<IModelDal>().SingleInstance();
+            builder.RegisterType<EfProductStatusDal>().As<IProductStatusDal>().SingleInstance();
+            builder.RegisterType<EfSerivceProductDal>().As<IServiceProductDal>().SingleInstance();
+            builder.RegisterType<EfServiceTypeDal>().As<IServiceTypeDal>().SingleInstance();
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

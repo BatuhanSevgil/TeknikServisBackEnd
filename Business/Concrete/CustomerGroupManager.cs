@@ -3,6 +3,7 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entity.Concrete;
 using System;
+using System.Collections.Generic;
 
 namespace Business.Concrete
 {
@@ -32,9 +33,9 @@ namespace Business.Concrete
             return new SuccessResult();
         }
 
-        public IDataResult<CustomerGroup> GetByCustomerId(int groupId)
+        public IDataResult<List<CustomerGroup>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<CustomerGroup>>(_groupDal.GetAll());
         }
     }
 }

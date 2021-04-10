@@ -9,7 +9,7 @@ namespace Entity.Concrete
     public class ServiceProduct : IEntity
     {
         public int Id { get; set; }
-        public int SpecialCode { get; set; }  // Özel kod - Takip No
+        public string SpecialCode { get; set; }  // Özel kod - Takip No
         public int CustomerId { get; set; } // MüşteriId
         public int BrandId { get; set; } // MarkaId
         public int ModelId { get; set; } //Model ID

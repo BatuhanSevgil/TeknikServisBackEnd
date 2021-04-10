@@ -13,8 +13,8 @@ namespace Business.Abstract
         public IResult Update(Customer customer);
         public IResult Delete(Customer customer);
         public IDataResult<Customer> GetByCustomerId (int customerId);
-        public IResult AddWithAddress(Customer customer, Address? address);
-        public IDataResult<CustomerDetailDto> GeyByCustomerDetailWithId(int customerId);
+        public IDataResult<Customer> AddOutId(Customer customer);
+        public IDataResult<CustomerDetailDto> GetByCustomerDetailWithId(int customerId);
 
         public IDataResult<List<Customer>> GetAll();
     }
