@@ -9,7 +9,7 @@ namespace Business.Abstract
         //SABİT TANIM
         IResult Add(ProductStatus productStatus);
         IResult Delete(ProductStatus productStatus);
-        IDataResult<List<ProductStatus>> GetAllProductStatus();
+        IDataResult<List<ProductStatus>> GetAll();
         IDataResult<ProductStatus> GetById(int productStatusId);
 
     }

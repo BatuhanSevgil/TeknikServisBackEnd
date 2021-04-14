@@ -7,18 +7,26 @@ namespace Core.Utilities.Business
 {
   public class BusinessRules
     {
-        public static IResult Run(params IResult[] logics)
+        public static IDataResult<List<IResult>> Run(params IResult[] logics)
         {
+            List<IResult> ErrorResult = new List<IResult>();
+            List<IResult> SuccessResult = new List<IResult>() { new SuccessResult() };
+
             foreach (var logic in logics)
             {
                 if (!logic.Success)
                 {
-                    return logic;
+                    ErrorResult.Add(logic);
                 }
             
             }
 
-            return null;
+            if (ErrorResult.Count<=0)
+            {
+                return new SuccessDataResult<List<IResult>>(SuccessResult);
+
+            }
+            return new ErrorDataResult<List<IResult>>(ErrorResult);
         }
     }
 }

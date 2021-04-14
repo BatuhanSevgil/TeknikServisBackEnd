@@ -8,7 +8,7 @@ namespace Business.Concrete
 {
     public class ProductStatusManager:IProductStatusService
     {
-        private IProductStatusDal _productStatusDal;
+        private readonly IProductStatusDal _productStatusDal;
 
         public ProductStatusManager(IProductStatusDal productStatusDal)
         {
@@ -28,7 +28,7 @@ namespace Business.Concrete
 
         }
 
-        public IDataResult<List<ProductStatus>> GetAllProductStatus()
+        public IDataResult<List<ProductStatus>> GetAll()
         {
             return new SuccessDataResult<List<ProductStatus>>(_productStatusDal.GetAll());
         }

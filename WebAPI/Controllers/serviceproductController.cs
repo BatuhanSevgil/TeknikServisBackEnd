@@ -14,11 +14,11 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class serviceproductController : ControllerBase
+    public class ServiceProductController : ControllerBase
     {
-        private IServiceProductService _productService;
-
-        public serviceproductController(IServiceProductService productService)
+        private readonly IServiceProductService _productService;
+        
+        public ServiceProductController(IServiceProductService productService)
         {
             _productService = productService;
 
@@ -28,11 +28,11 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("getall")]
-        public IActionResult getall()
+        public IActionResult Getall()
         {
 
 
-            var result = _productService.getAll();
+            var result = _productService.GetAll();
 
             if (result.Success)
             {
@@ -44,7 +44,7 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("add")]
-        public IActionResult add([FromBody] ServiceProduct serviceProduct)
+        public IActionResult Add([FromBody] ServiceProduct serviceProduct)
         {
             var result = _productService.Add(serviceProduct);
             if (result.Success)

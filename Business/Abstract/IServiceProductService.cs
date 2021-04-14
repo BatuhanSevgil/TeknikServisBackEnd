@@ -7,7 +7,7 @@ namespace Business.Abstract
     public interface IServiceProductService
     {
         IResult Add(ServiceProduct serviceProduct);
-        IDataResult<List<ServiceProduct>> getAll();
+        IDataResult<List<ServiceProduct>> GetAll();
         IResult AddwithCustomer(ServiceProduct serviceProduct, Customer customer);
     }
 }

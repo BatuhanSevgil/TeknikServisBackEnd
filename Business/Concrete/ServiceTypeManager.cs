@@ -8,7 +8,7 @@ namespace Business.Concrete
 {
     public class ServiceTypeManager:IServiceTypeService
     {
-        private IServiceTypeDal _serviceTypeDal;
+        private readonly IServiceTypeDal _serviceTypeDal;
 
         public ServiceTypeManager(IServiceTypeDal serviceTypeDal)
         {

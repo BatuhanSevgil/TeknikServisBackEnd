@@ -25,7 +25,7 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("add")]
-        public IActionResult add([FromBody] Customer  customer)
+        public IActionResult Add([FromBody] Customer  customer)
         {
             var result = _customerService.Add(customer);
 
@@ -35,14 +35,12 @@ namespace WebAPI.Controllers
             }
 
             return BadRequest(result);
-
-
         }
 
 
 
         [HttpGet("getall")]
-        public IActionResult getall()
+        public IActionResult Getall()
         {
 
             var result = _customerService.GetAll();
@@ -54,5 +52,6 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
     }
 }

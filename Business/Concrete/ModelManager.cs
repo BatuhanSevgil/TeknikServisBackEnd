@@ -8,7 +8,12 @@ namespace Business.Concrete
 {
     public class ModelManager:IModelService
     {
-        private IModelDal _modelDal;
+        private readonly IModelDal _modelDal;
+
+        public ModelManager(IModelDal modelDal)
+        {
+            _modelDal = modelDal;
+        }
 
         public IResult Add(Model model)
         {
@@ -18,7 +23,7 @@ namespace Business.Concrete
 
         public IDataResult<Model> GetByModelId(int modelId)
         {
-            throw new System.NotImplementedException();
+            return new SuccessDataResult<Model>(_modelDal.Get(fil => fil.Id == modelId));
         }
 
         public IResult DeleteById(int modelId)
@@ -31,6 +36,11 @@ namespace Business.Concrete
         public IDataResult<List<Model>> GetByBrandId(int brandId)
         {
            return new SuccessDataResult<List<Model>>( _modelDal.GetAll(model => model.BrandId == brandId));
+        }
+
+        public IDataResult<List<Model>> Getall()
+        {
+            return new SuccessDataResult<List<Model>>(_modelDal.GetAll());
         }
     }
 }

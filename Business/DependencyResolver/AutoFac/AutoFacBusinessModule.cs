@@ -29,6 +29,8 @@ namespace Business.DependencyResolver.AutoFac
             builder.RegisterType<ProductStatusManager>().As<IProductStatusService>().SingleInstance();
             builder.RegisterType<ServiceProductManager>().As<IServiceProductService>().SingleInstance();
             builder.RegisterType<ServiceTypeManager>().As<IServiceTypeService>().SingleInstance();
+            builder.RegisterType<ServiceProductPriceManager>().As<IServiceProductPriceService>().SingleInstance();
+
 
             //DALclass to DALInterface
 
@@ -41,6 +43,7 @@ namespace Business.DependencyResolver.AutoFac
             builder.RegisterType<EfProductStatusDal>().As<IProductStatusDal>().SingleInstance();
             builder.RegisterType<EfSerivceProductDal>().As<IServiceProductDal>().SingleInstance();
             builder.RegisterType<EfServiceTypeDal>().As<IServiceTypeDal>().SingleInstance();
+            builder.RegisterType<EfServiceProductPriceDal>().As<IServiceProductPriceDal>().SingleInstance();
 
 
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();

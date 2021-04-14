@@ -13,8 +13,8 @@ namespace Business.Concrete
 {
     public class ServiceProductManager:IServiceProductService
     {
-        private IServiceProductDal _serviceProduct;
-        private ICustomerService _customerService;
+        private readonly IServiceProductDal _serviceProduct;
+        private readonly ICustomerService _customerService;
 
         public ServiceProductManager(IServiceProductDal serviceProduct,ICustomerService customerService)
         {
@@ -32,7 +32,7 @@ namespace Business.Concrete
 
         }
 
-        public IDataResult<List<ServiceProduct>> getAll()
+        public IDataResult<List<ServiceProduct>> GetAll()
         {
             return new SuccessDataResult<List<ServiceProduct>>(_serviceProduct.GetAll());
 
