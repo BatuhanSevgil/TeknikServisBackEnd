@@ -1,4 +1,4 @@
 # TeknikServisBackEnd
 
 ## .net core
-## geliştirme devam edilmekte
+## Geliştirmeye devam etmekteyim.
