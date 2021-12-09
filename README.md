@@ -1,4 +1,4 @@
 # TeknikServisBackEnd
 
-##.net core
+## .net core
 ## geliştirme devam edilmekte
